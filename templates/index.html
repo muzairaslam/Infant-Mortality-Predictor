@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Infant Mortality</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Currently Breastfeeding" placeholder="Currently Breastfeeding" required="required" />
+        <input type="text" name="Number of children died before" placeholder="Number of children died before" required="required" />
+		<input type="text" name="Child's weight in kg" placeholder="Child's weight in kg" required="required" />
+        <input type="text" name="Months of breastfeeding" placeholder="Months of breastfeeding" required="required" />
+        <input type="text" name="Living Children + current pregnancy" placeholder="Living Children + current pregnancy" required="required" />
+        <input type="text" name="Recieved Polio" placeholder="Recieved Polio 0" required="required" />
+        <input type="text" name="Height/Age standard deviation" placeholder="Height/Age standard deviation" required="required" />
+        <input type="text" name="Recieved Polio 1" placeholder="Recieved Polio 1" required="required" />
+        <input type="text" name="Birth weight in kg of Child" placeholder="Birth weight in kg of Child" required="required" />
+        <input type="text" name="Ever Breastfed" placeholder="Ever Breastfed" required="required" />
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
